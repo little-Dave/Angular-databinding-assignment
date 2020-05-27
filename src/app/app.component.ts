@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
+  gameTimer: number;
+
+  showTime(timer: {elapsedTime: number}) {
+    this.gameTimer = timer.elapsedTime;
+  }
+
 }

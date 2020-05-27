@@ -20,7 +20,8 @@
     <div class="col-xs-12">
       <app-odd></app-odd>
       <app-even></app-even>
-      <app-game-control></app-game-control>
+      <app-game-control (gameStarted)="showTime($event)"></app-game-control>
+      <h3 style="color: green;">{{ gameTimer }}</h3>
     </div>
   </div>
 </div>
