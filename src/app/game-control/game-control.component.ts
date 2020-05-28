@@ -9,12 +9,16 @@ import { Component, EventEmitter, Output } from '@angular/core';
 
 export class GameControlComponent {
   @Output() gameStarted = new EventEmitter<{elapsedTime: number}>();
+  gameActive = false;
   counter = 0;
 
   startGame() {
-    setInterval(() => {
-      this.counter++;
-      this.gameStarted.emit({elapsedTime: this.counter});
-    }, 1000);
+    if (this.gameActive === false) {
+      setInterval(() => {
+        this.gameActive = true;
+        this.counter++;
+        this.gameStarted.emit({elapsedTime: this.counter});
+      }, 1000);
+    }
   }
 }
