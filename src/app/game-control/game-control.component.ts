@@ -11,14 +11,26 @@ export class GameControlComponent {
   @Output() gameStarted = new EventEmitter<{elapsedTime: number}>();
   gameActive = false;
   counter = 0;
+  interval: number;
+  // activateTimer()  {
+  //   return setInterval(() => {
+  //     this.counter++;
+  //     this.gameStarted.emit({elapsedTime: this.counter});
+  //   }, 1000);
+  // }
 
   startGame() {
     if (this.gameActive === false) {
-      setInterval(() => {
-        this.gameActive = true;
+      this.gameActive = true;
+      this.interval = setInterval(() => {
         this.counter++;
         this.gameStarted.emit({elapsedTime: this.counter});
       }, 1000);
     }
+  }
+
+  stopGame() {
+    clearInterval(this.interval);
+    this.gameActive = false;
   }
 }
