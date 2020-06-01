@@ -19,7 +19,7 @@
   <div class="row">
     <div class="col-xs-12">
       <app-game-control (gameStarted)="showTime($event)"></app-game-control>
-      <h3 id="gameTimer" style="color: green;">{{ gameTimer || 0 }}</h3>
+      <h3 id="gameTimer" style="color: green;">{{ numbers[numbers.length - 1] || 0 }}</h3>
       <br><br>
       <ul>
         <li *ngFor="let number of numbers">
