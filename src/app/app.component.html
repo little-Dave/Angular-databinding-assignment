@@ -18,10 +18,21 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <app-odd></app-odd>
-      <app-even></app-even>
       <app-game-control (gameStarted)="showTime($event)"></app-game-control>
-      <h3 style="color: green;">{{ gameTimer || 0 }}</h3>
+      <h3 id="gameTimer" style="color: green;">{{ gameTimer || 0 }}</h3>
+      <br><br>
+      <ul>
+        <li *ngFor="let number of numbers">
+          <app-odd 
+            *ngIf="number % 2 !== 0"
+            [element]="number"
+          ></app-odd>
+          <app-even 
+            *ngIf="number % 2 === 0"
+            [element]="number"
+          ></app-even>
+        </li>
+      </ul>
     </div>
   </div>
 </div>

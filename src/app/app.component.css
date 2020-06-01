@@ -1,0 +1,7 @@
+li {
+  list-style-type: none;
+}
+
+#gameTimer {
+  font-size: 5rem;
+}

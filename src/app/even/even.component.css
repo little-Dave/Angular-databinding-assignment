@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Pompiere&display=swap');
+
+* {
+  font-family: 'Pompiere';
+  color: #1728e6;
+  background-color: lightgoldenrodyellow;
+  border: 4px inset red;
+  padding: 1rem;
+  width: 15rem;
+}

@@ -12,12 +12,6 @@ export class GameControlComponent {
   gameActive = false;
   counter = 0;
   interval: number;
-  // activateTimer()  {
-  //   return setInterval(() => {
-  //     this.counter++;
-  //     this.gameStarted.emit({elapsedTime: this.counter});
-  //   }, 1000);
-  // }
 
   startGame() {
     if (this.gameActive === false) {
